@@ -44,8 +44,7 @@ const Dashboard = () => {
     // Store updated data in localStorage
     localStorage.setItem("formData", JSON.stringify(exitingUser));
 
-    // Show success toast
-    toast.success("Form Submitted!");
+    
 
     // Reset form data
     setName("");
@@ -98,8 +97,7 @@ const Dashboard = () => {
         </button>
       </form>
 
-      {/* Toast container */}
-      <ToastContainer />
+
     </div>
   );
 };
