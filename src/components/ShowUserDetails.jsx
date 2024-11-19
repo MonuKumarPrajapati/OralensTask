@@ -1,30 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-const ShowUserDetails = () => {
-    const [userData, setUserData] = useState(null);
-    
+const ShowUserDetails = ({ userData, setUserData }) => {
 
-  const userInputFromLs = JSON.parse(localStorage.getItem("formData"));
-
+  // first render only
   useEffect(() => {
+    const userInputFromLs = JSON.parse(localStorage.getItem("formData"));
     setUserData(userInputFromLs);
-      }, []);
-    
-   
+  }, []);
 
-    
-    const handleReset = () =>{
-        const removeAll = localStorage.removeItem('formData')
-        setUserData(removeAll)
-     
-      
-    }
+  const handleReset = () => {
+    const removeAll = localStorage.removeItem("formData");
+    setUserData(removeAll);
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-          <div className=" flex justify-between items-center">
-          <h1 className="text-2xl font-bold mb-6 text-center ">Users</h1>
-              <button className='px-4 py-2 bg-blue-500 rounded-md'
-              onClick={handleReset}>Reset All</button>
+      <div className=" flex justify-between items-center">
+        <h1 className="text-2xl font-bold mb-6 text-center ">Users</h1>
+        <button
+          className="px-4 py-2 bg-blue-500 rounded-md"
+          onClick={handleReset}
+        >
+          Reset All
+        </button>
       </div>
 
       <div className="overflow-x-auto">

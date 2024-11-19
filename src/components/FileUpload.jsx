@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const FileUpload = ({ file, setFile }) => {
   // Handle file change
@@ -17,7 +17,6 @@ const FileUpload = ({ file, setFile }) => {
 
   return (
     <div>
-   
       {!file ? (
         <div className="mb-6">
           <label
@@ -66,13 +65,19 @@ const FileUpload = ({ file, setFile }) => {
           </div>
         </div>
       ) : (
-        <div className=" flex gap-6 justify-center items-center py-2">
-          <p>Uploaded File: {file.name}</p>
-          <button onClick={handleReset} className=" px-4 py-2 bg-slate-400 rounded-md">Reset</button>
+        <div className=" flex gap-6 justify-between items-center py-2 bg-gray-100 rounded-md my-5 px-4">
+          <p>
+            {/* <span className="font-bold mr-4">Uploaded File:</span> */}
+            {file.name}
+          </p>
+          <button
+            onClick={handleReset}
+            className="text-sm px-2 py-2 bg-red-200 rounded-md"
+          >
+            Remove
+          </button>
         </div>
       )}
-      
-      
     </div>
   );
 };
