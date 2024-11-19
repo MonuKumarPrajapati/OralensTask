@@ -1,17 +1,14 @@
-
-import './App.css'
-import Dashboard from './components/Dashboard'
-import ShowUserDetails from './components/ShowUserDetails'
+import "./App.css";
+import Dashboard from "./components/Dashboard";
+import ShowUserDetails from "./components/ShowUserDetails";
 
 function App() {
-  
-
   return (
     <>
       <Dashboard />
-      <ShowUserDetails/>
+      <ShowUserDetails />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
